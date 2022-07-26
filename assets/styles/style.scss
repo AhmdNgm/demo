@@ -1,0 +1,498 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    overflow-x: hidden;
+
+    a {
+        text-decoration: none;
+    }
+
+    img {
+        object-fit: cover;
+    }
+
+    header {
+        height: 100%;
+        background-image: url("/assets/img/home.jpg");
+        padding-bottom: 5rem;
+
+        nav {
+            .navContainer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                max-width: 1200px;
+                width: 90%;
+                margin: 0 auto;
+                padding: 1.5rem 0;
+
+                .logo {
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    color: #fff;
+                }
+
+                .toggler {
+                    display: none;
+                }
+
+                .sideBarToggler {
+                    font-size: 1.5rem;
+                    color: #fff;
+                    cursor: pointer;
+                    z-index: 999;
+                }
+
+                .navLinks {
+                    display: flex;
+                    gap: 1.5rem;
+                    align-items: center;
+
+                    a {
+                        font-size: 1.2rem;
+                        font-weight: 700;
+                        color: #fff;
+                    }
+
+                    .dropCon {
+                        display: flex;
+                        flex-direction: column;
+                        position: relative;
+                        padding: 1rem;
+
+                        &:hover {
+                            .dropDown {
+                                display: flex;
+                            }
+                        }
+
+                        .dropDown {
+                            position: absolute;
+                            top: 50px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            background-color: #fff;
+                            display: none;
+                            gap: 1rem;
+                            flex-direction: column;
+                            padding: 1rem;
+                            border-radius: 5px;
+                            width: max-content;
+                            z-index: 999;
+
+                            a {
+                                color: #3A5252;
+                            }
+                        }
+
+                        p {
+                            font-size: 1.2rem;
+                            font-weight: 700;
+                            color: #fff;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .sideBarCon {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            background-color: #3a525285;
+            backdrop-filter: blur(5px);
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            transition: all 250ms ease-in-out;
+            z-index: 99;
+
+            .sideBar {
+                position: fixed;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                background-color: #3A5252;
+                padding: 2rem;
+                border-radius: 5px;
+                transform: translateX(0);
+                transition: all 250ms ease-in-out;
+
+                .sideLinks {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2rem;
+
+                    a {
+                        font-size: 1.2rem;
+                        color: #fff;
+                        font-weight: 700;
+                    }
+                }
+
+                p {
+                    font-size: 1.2rem;
+                    color: #fff;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        .sideBarCon.active {
+            background-color: transparent;
+            backdrop-filter: none;
+            pointer-events: none;
+            transition: all 250ms ease-in-out;
+
+            .sideBar {
+                transform: translateX(100%);
+                transition: all 250ms ease-in-out;
+            }
+        }
+
+        .mobileNav {
+            display: none;
+        }
+
+        .headerContent {
+            max-width: 1200px;
+            width: 90%;
+            margin: 5rem auto;
+            padding: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.186);
+            backdrop-filter: blur(50px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 5px;
+
+            .headerText {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #ebfdfd;
+            }
+        }
+    }
+
+    .news {
+        max-width: 1200px;
+        width: 90%;
+        margin: 3rem auto;
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #3A5252;
+        }
+
+        .newsContainer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+
+            .card {
+                .cardImg {
+                    img {
+                        width: 100%;
+                        height: 250px;
+                        border-radius: 5px;
+                    }
+                }
+
+                .cardBody {
+                    color: #3A5252;
+
+                    .text {
+                        font-size: 1.25rem;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+
+    .aboutUs {
+        max-width: 1200px;
+        width: 90%;
+        margin: 3rem auto;
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #3A5252;
+            margin-bottom: 2rem;
+        }
+
+        .aboutContainer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+
+            .aboutImg {
+                height: 400px;
+                width: 50%;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 5px;
+                }
+            }
+
+            .aboutText {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                h1 {
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    color: #3A5252;
+                }
+
+                p {
+                    font-size: 1.2rem;
+                    color: #3A5252;
+                }
+            }
+        }
+
+    }
+
+    footer {
+        background-color: #3A5252;
+
+        .footerContainer {
+            max-width: 1200px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 3rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .footerLogo {
+                font-size: 3rem;
+                font-weight: 700;
+                color: #fff;
+            }
+
+            .footerLinks {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                a {
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    color: #fff;
+                }
+            }
+
+        }
+
+        .copy {
+            background-color: #fff;
+            text-align: center;
+            font-size: 1.2rem;
+            color: #3A5252;
+            padding: 1rem;
+        }
+    }
+
+    @media screen and (max-width:768px) {
+        header {
+            nav {
+                .navContainer {
+
+                    .logo {
+                        font-size: 1.2rem;
+                    }
+
+                    .toggler {
+                        display: block;
+                        font-size: 1.2rem;
+                        color: #fff;
+                        cursor: pointer;
+                    }
+
+                    .sideBarToggler {
+                        display: none;
+                    }
+
+                    .navLinks {
+                        display: none;
+                    }
+                }
+            }
+
+            .headerContent {
+                margin: 3rem auto;
+
+                .headerText {
+                    h1 {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+
+            .mobileNav.closed {
+                display: block !important;
+                width: 100%;
+                height: 100%;
+                background-color: #fff;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 9999;
+
+                .mobContainer {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3rem;
+                    width: 90%;
+                    margin: 0 auto;
+                    padding: 1.5rem 0;
+
+                    .top {
+                        display: flex;
+                        justify-content: space-between;
+
+                        .logo {
+                            font-size: 1.2rem;
+                            font-weight: 700;
+                            color: #000;
+                        }
+
+                        .toggler {
+                            display: block;
+                            font-size: 1.2rem;
+                            color: #000;
+                            cursor: pointer;
+                        }
+                    }
+
+                    .mobLinks {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+
+                        a {
+                            font-size: 1.2rem;
+                            color: #000;
+                        }
+                    }
+                }
+            }
+        }
+
+        .news {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .newsContainer {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 2rem;
+
+                .card {
+                    .cardImg {
+                        img {
+                            height: 200px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .aboutUs {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .aboutContainer {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                gap: 2rem;
+
+                .aboutImg {
+                    height: 300px;
+                    width: 100%;
+                }
+
+                .aboutText {
+                    width: 100%;
+
+                    h1 {
+                        font-size: 1.2rem;
+                    }
+
+                    p {
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+        }
+
+        footer {
+            .footerContainer {
+
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 2rem;
+
+                .footerLogo {
+                    font-size: 2rem;
+                    font-weight: 700;
+                    color: #fff;
+                }
+
+                .footerLinks {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    a {
+                        font-size: 1rem;
+                        font-weight: 700;
+                        color: #fff;
+                    }
+                }
+
+            }
+
+            .copy {
+                background-color: #fff;
+                text-align: center;
+                font-size: 1.2rem;
+                color: #3A5252;
+                padding: 1rem;
+            }
+        }
+    }
+}

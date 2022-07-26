@@ -1,0 +1,550 @@
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  overflow-x: hidden;
+}
+
+body a {
+  text-decoration: none;
+}
+
+body img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body header {
+  height: 100%;
+  background-image: url("/assets/img/home.jpg");
+  padding-bottom: 5rem;
+}
+
+body header nav .navContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+}
+
+body header nav .navContainer .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+body header nav .navContainer .toggler {
+  display: none;
+}
+
+body header nav .navContainer .sideBarToggler {
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 999;
+}
+
+body header nav .navContainer .navLinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body header nav .navContainer .navLinks a {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+body header nav .navContainer .navLinks .dropCon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  padding: 1rem;
+}
+
+body header nav .navContainer .navLinks .dropCon:hover .dropDown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body header nav .navContainer .navLinks .dropCon .dropDown {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #fff;
+  display: none;
+  gap: 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem;
+  border-radius: 5px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  z-index: 999;
+}
+
+body header nav .navContainer .navLinks .dropCon .dropDown a {
+  color: #3A5252;
+}
+
+body header nav .navContainer .navLinks .dropCon p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+body header .sideBarCon {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: #3a525285;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  z-index: 99;
+}
+
+body header .sideBarCon .sideBar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.5rem;
+  background-color: #3A5252;
+  padding: 2rem;
+  border-radius: 5px;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+}
+
+body header .sideBarCon .sideBar .sideLinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+}
+
+body header .sideBarCon .sideBar .sideLinks a {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+body header .sideBarCon .sideBar p {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+body header .sideBarCon.active {
+  background-color: transparent;
+  -webkit-backdrop-filter: none;
+          backdrop-filter: none;
+  pointer-events: none;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+}
+
+body header .sideBarCon.active .sideBar {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+}
+
+body header .mobileNav {
+  display: none;
+}
+
+body header .headerContent {
+  max-width: 1200px;
+  width: 90%;
+  margin: 5rem auto;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.186);
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 5px;
+}
+
+body header .headerContent .headerText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ebfdfd;
+}
+
+body .news {
+  max-width: 1200px;
+  width: 90%;
+  margin: 3rem auto;
+}
+
+body .news h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #3A5252;
+}
+
+body .news .newsContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+body .news .newsContainer .card .cardImg img {
+  width: 100%;
+  height: 250px;
+  border-radius: 5px;
+}
+
+body .news .newsContainer .card .cardBody {
+  color: #3A5252;
+}
+
+body .news .newsContainer .card .cardBody .text {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+body .aboutUs {
+  max-width: 1200px;
+  width: 90%;
+  margin: 3rem auto;
+}
+
+body .aboutUs h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #3A5252;
+  margin-bottom: 2rem;
+}
+
+body .aboutUs .aboutContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+}
+
+body .aboutUs .aboutContainer .aboutImg {
+  height: 400px;
+  width: 50%;
+}
+
+body .aboutUs .aboutContainer .aboutImg img {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+
+body .aboutUs .aboutContainer .aboutText {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+}
+
+body .aboutUs .aboutContainer .aboutText h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #3A5252;
+}
+
+body .aboutUs .aboutContainer .aboutText p {
+  font-size: 1.2rem;
+  color: #3A5252;
+}
+
+body footer {
+  background-color: #3A5252;
+}
+
+body footer .footerContainer {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 3rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body footer .footerContainer .footerLogo {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+body footer .footerContainer .footerLinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+}
+
+body footer .footerContainer .footerLinks a {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+body footer .copy {
+  background-color: #fff;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #3A5252;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  body header nav .navContainer .logo {
+    font-size: 1.2rem;
+  }
+  body header nav .navContainer .toggler {
+    display: block;
+    font-size: 1.2rem;
+    color: #fff;
+    cursor: pointer;
+  }
+  body header nav .navContainer .sideBarToggler {
+    display: none;
+  }
+  body header nav .navContainer .navLinks {
+    display: none;
+  }
+  body header .headerContent {
+    margin: 3rem auto;
+  }
+  body header .headerContent .headerText h1 {
+    font-size: 1.2rem;
+  }
+  body header .mobileNav.closed {
+    display: block !important;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+  }
+  body header .mobileNav.closed .mobContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 3rem;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+  }
+  body header .mobileNav.closed .mobContainer .top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  body header .mobileNav.closed .mobContainer .top .logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #000;
+  }
+  body header .mobileNav.closed .mobContainer .top .toggler {
+    display: block;
+    font-size: 1.2rem;
+    color: #000;
+    cursor: pointer;
+  }
+  body header .mobileNav.closed .mobContainer .mobLinks {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1rem;
+  }
+  body header .mobileNav.closed .mobContainer .mobLinks a {
+    font-size: 1.2rem;
+    color: #000;
+  }
+  body .news h1 {
+    font-size: 2rem;
+  }
+  body .news .newsContainer {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+  body .news .newsContainer .card .cardImg img {
+    height: 200px;
+  }
+  body .aboutUs h1 {
+    font-size: 2rem;
+  }
+  body .aboutUs .aboutContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 2rem;
+  }
+  body .aboutUs .aboutContainer .aboutImg {
+    height: 300px;
+    width: 100%;
+  }
+  body .aboutUs .aboutContainer .aboutText {
+    width: 100%;
+  }
+  body .aboutUs .aboutContainer .aboutText h1 {
+    font-size: 1.2rem;
+  }
+  body .aboutUs .aboutContainer .aboutText p {
+    font-size: 1rem;
+  }
+  body footer .footerContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 2rem;
+  }
+  body footer .footerContainer .footerLogo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  body footer .footerContainer .footerLinks {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1rem;
+  }
+  body footer .footerContainer .footerLinks a {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  body footer .copy {
+    background-color: #fff;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #3A5252;
+    padding: 1rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */
